@@ -14,7 +14,7 @@ client.on('message', (message) => {
     const rollFlavor = message.content.split(' ').slice(2).join(' ');
     switch (messageWords[0]) {
         case "DJ" : { // Lorsque "Salut" est envoyé
-            message.channel.send("Khaled !")
+            message.channel.send("Rexma !")
         }
         break;
         case '!roll' : {
@@ -69,9 +69,9 @@ client.on('message', (message) => {
             if (messageWords.length === 1) {
                 return message.reply(
                     '\n ' +
-                    '!help ' +
-                    '!roll <numberOfDice>d<diceSize>\n    ex: !roll 2d20\n ' +
-                    '!choose <something>|<something>\n    ex: !choose Hippo|Saké|Binouse' +
+                    '!help\n ' +
+                    '!roll <numberOfDice>d<diceSize>      ex: !roll 2d20\n ' +
+                    '!choose <something>|<something>      ex: !choose Hippo|Saké|Binouse' +
                     '!node pour utiliser l\'interpréteur  ex: !node a=2+2' +
                     '!shell pour lâcher ses plus belles commandes shell  ex: !shell ls ~/'
                 );
