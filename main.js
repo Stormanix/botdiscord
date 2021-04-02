@@ -14,7 +14,7 @@ client.on('message', (message) => {
     const rollFlavor = message.content.split(' ').slice(2).join(' ');
     switch (messageWords[0]) {
         case "DJ" : { // Lorsque "Salut" est envoyé
-            message.channel.send("Rexma !")
+            message.channel.send("Khaled !")
         }
         break;
         case '!roll' : {
