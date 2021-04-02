@@ -48,7 +48,7 @@ client.on('message', (message) => {
             } else {
                 return message.reply(
                     (Math.floor(Math.random() * sides) + 1) + ' '
-                );
+                );x
             }
         }
         break;
@@ -105,12 +105,8 @@ client.on('message', (message) => {
             }
         }
         break;
-        default: {
-            return message.reply('C\'est pas faut !');
-        }
-        break;
     }
 
 });
 
-client.login("ODE0OTU5Mjk5ODQyNTM5NTcw.YDlb_g.b3szD3GeTNjPkqJxpOQY3pzpPt0");
+client.login("ODE0OTU5Mjk5ODQyNTM5NTcw.YDlb_g.0oquC2NTFof3kBV_ydAdf66MTC8");
