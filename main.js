@@ -11,7 +11,7 @@ client.on("ready", function () {
 // Répondre à un message
 client.on('message', (message) => {
     const messageWords = message.content.split(' ').slice(0, 2);
-    const rollFlavor = message.content.split(' ').slice(2).join(' ');
+    //const rollFlavor = message.content.split(' ').slice(2).join(' ');
     switch (messageWords[0]) {
         case "DJ" : { // Lorsque "Salut" est envoyé
             message.channel.send("Rexma !")
@@ -48,11 +48,10 @@ client.on('message', (message) => {
             } else {
                 return message.reply(
                     (Math.floor(Math.random() * sides) + 1) + ' '
-                );x
+                );
             }
         }
-        break;
-        case '!choose' : {
+        case '!choose' :
             if (messageWords.length === 1) {
                 return message.reply('Arguments are missing !\n Example : !choose Hippo|Saké|Binouse');
             }
@@ -64,8 +63,7 @@ client.on('message', (message) => {
                     messageWordsChoose[Math.floor(Math.random() * (messageWordsChoose.length-1 + 1))]
                 );
             }
-        }
-        case '!help' : {
+        case '!help' :
             if (messageWords.length === 1) {
                 return message.reply(
                     '\n ' +
@@ -76,9 +74,8 @@ client.on('message', (message) => {
                     '!shell pour lâcher ses plus belles commandes shell  ex: !shell ls ~/'
                 );
             }
-        }
         break;
-        case "!node" : {
+        case "!node" :
             if (messageWords.length === 1) {
                 return message.reply('usage: !node [code]');
             }
@@ -86,8 +83,7 @@ client.on('message', (message) => {
                 console.log(eval(message.content.slice(5)));
                 return message.reply('\n'+eval(message.content.slice(5)));
             }
-        }
-        case "!shell" : {
+        case "!shell" :
             if (messageWords.length === 1) {
                 return message.reply('usage: !shell [command]');
             }
@@ -103,10 +99,16 @@ client.on('message', (message) => {
                     return message.reply(`stdout: ${stdout}\n stderr: ${stderr}`);
                 });
             }
-        }
-        break;
     }
 
 });
 
-client.login("ODE0OTU5Mjk5ODQyNTM5NTcw.YDlb_g.0oquC2NTFof3kBV_ydAdf66MTC8");
+try {
+    let tokenCode = fs.readFileSync('token', 'utf-8');
+    client.login(tokenCode);
+}
+catch (e) {
+    console.log(e);
+}
+
+
